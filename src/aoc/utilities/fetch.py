@@ -11,9 +11,8 @@ def _load_session_id():
 
 
 INPUT_DIR = Path("/tmp/aoc/inputs")
-HEADERS = {"Referer": "github.com/tomfran/aoc-24"}
-SESSION = _load_session_id()
-COOKIES = {"session": SESSION}
+HEADERS = {"user-agent": "github.com/tomfran/aoc-24"}
+COOKIES = {"session": _load_session_id()}
 
 
 def get_input(day: int) -> str:

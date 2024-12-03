@@ -24,9 +24,3 @@ Alternatevely you can use one of those two rules:
 make run-latest # run latest file in solutions
 make run-all    # run all solutions
 ```
-## Solutions
-| **Day** | **Solution** |
-| --- | -------- |
-| 01 | [Link](./src/aoc/solutions/01.py) |
-| 02 | [Link](./src/aoc/solutions/02.py) |
-| 03 | [Link](./src/aoc/solutions/03.py) |
