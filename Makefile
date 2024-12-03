@@ -19,9 +19,6 @@ run-latest:
 		exit 1; \
 	fi
 
-prun-latest:
-	@make run-latest | glow
-
 run-all:
 	@for file in $(SOLUTION_DIR)/*.py; do \
 		day=$$(basename $$file .py); \
@@ -29,9 +26,6 @@ run-all:
 		python $$file; \
 		echo ""; \
 	done
-
-prun-all:
-	@make run-all | glow
 
 readme:
 	@cat $(INTRO_FILE) > $(README_FILE)
@@ -55,3 +49,12 @@ new:
 	echo "Creating $$new_file"; \
 	echo 'from aoc.utilities.fetch import get_input\n\ndata = get_input('$$next_day')' > $$new_file; \
 	echo "New solution file $$new_file created successfully!"
+
+
+# Pretty Run commands, need https://github.com/charmbracelet/glow
+
+run:
+	@make run-latest | glow
+
+runa:
+	@make run-all | glow
