@@ -1,10 +1,8 @@
 from aoc.utilities.fetch import get_input
 from collections import Counter
 
-data = get_input(1)
 
-
-def split(input: str):
+def split(input):
     first, second = [], []
     for line in input.splitlines():
         a, b = map(int, line.split())
@@ -14,9 +12,7 @@ def split(input: str):
     return first, second
 
 
-def solve_first(input: str):
-    first, second = split(input)
-
+def solve_first(first, second):
     ans = 0
     for a, b in zip(sorted(first), sorted(second)):
         ans += abs(a - b)
@@ -24,9 +20,7 @@ def solve_first(input: str):
     print(ans)
 
 
-def solve_second(input: str):
-    first, second = split(input)
-
+def solve_second(first, second):
     c = Counter(second)
 
     ans = 0
@@ -36,5 +30,6 @@ def solve_second(input: str):
     print(ans)
 
 
-solve_first(data)
-solve_second(data)
+first, second = split(get_input(1))
+solve_first(first, second)
+solve_second(first, second)

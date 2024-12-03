@@ -1,8 +1,6 @@
 from aoc.utilities.fetch import get_input
 from collections import Counter
 
-data = [list(map(int, line.split())) for line in get_input(2).splitlines()]
-
 
 def check(line):
     def f(line):
@@ -37,5 +35,6 @@ def solve_second(input):
     print(Counter(map(brute_check, input)).get(True, 0))
 
 
+data = [list(map(int, line.split())) for line in get_input(2).splitlines()]
 solve_first(data)
 solve_second(data)
