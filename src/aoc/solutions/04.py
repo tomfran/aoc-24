@@ -18,7 +18,7 @@ def check_first_internal(i, j, di, dj, level):
     return check_first_internal(i + di, j + dj, di, dj, level + 1)
 
 
-def check_first(i, j, data):
+def check_first(i, j):
     deltas = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (-1, -1), (-1, 1), (1, -1)]
     return sum(map(lambda x: check_first_internal(i, j, x[0], x[1], 0), deltas))
 
