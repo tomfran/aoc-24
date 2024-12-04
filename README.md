@@ -2,6 +2,8 @@
 
 Python solutions for [Advent of Code](https://adventofcode.com/) 2024.
 
+## Commands
+
 Setup and build everything, using [uv](https://github.com/astral-sh/uv):
 
 ```
