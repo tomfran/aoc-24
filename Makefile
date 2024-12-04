@@ -33,7 +33,7 @@ run-all:
 readme:
 	@cat $(INTRO_FILE) > $(README_FILE)
 	@echo "## Solutions" >> $(README_FILE)
-	@echo "\nComplete list of solutions.\n" >> $(README_FILE)
+	@echo "\nHere is the complete list of solutions:\n" >> $(README_FILE)
 	@echo "| **Day** | **Link** | **Total Lines** | **Effective Lines** | **Last Updated** |" >> $(README_FILE)
 	@echo "| -: | - | -: | -: | -: |" >> $(README_FILE)
 	@for file in $(SOLUTION_DIR)/*.py; do \
