@@ -26,7 +26,7 @@ make run-all    # run all solutions
 ```
 ## Solutions
 
-Here is the complete list of solutions:
+Complete list of solutions.
 
 | **Day** | **Link** | **Total Lines** | **Effective Lines** | **Last Updated** |
 | -: | - | -: | -: | -: |
