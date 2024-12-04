@@ -39,7 +39,7 @@ readme:
 		day=$$(basename $$file .py); \
 		total_lines=$$(wc -l < $$file); \
 		effective_lines=$$(grep -cve '^\s*$$' -e '^\s*#' $$file); \
-		last_updated=$$(stat -f '%Sm' -t '%a, %d %b %Y' $$file); \
+		last_updated=$$(stat -f '%Sm' -t '%a, %b %d, %Y' $$file); \
 		echo "| $$day | [Link](./$$file) | $$total_lines | $$effective_lines | $$last_updated |" >> $(README_FILE); \
 	done
 	@echo "README.md generated successfully"

@@ -27,7 +27,7 @@ make run-all    # run all solutions
 ## Solutions
 | **Day** | **Link** | **Total Lines** | **Effective Lines** | **Last Updated** |
 | -: | - | -: | -: | -: |
-| 01 | [Link](./src/aoc/solutions/01.py) |       36 | 23 | Wed, 04 Dec 2024 |
-| 02 | [Link](./src/aoc/solutions/02.py) |       41 | 27 | Thu, 05 Dec 2024 |
-| 03 | [Link](./src/aoc/solutions/03.py) |       46 | 30 | Wed, 04 Dec 2024 |
-| 04 | [Link](./src/aoc/solutions/04.py) |       64 | 39 | Thu, 05 Dec 2024 |
+| 01 | [Link](./src/aoc/solutions/01.py) |       36 | 23 | Wed, Dec 04, 2024 |
+| 02 | [Link](./src/aoc/solutions/02.py) |       41 | 27 | Thu, Dec 05, 2024 |
+| 03 | [Link](./src/aoc/solutions/03.py) |       46 | 30 | Wed, Dec 04, 2024 |
+| 04 | [Link](./src/aoc/solutions/04.py) |       64 | 39 | Thu, Dec 05, 2024 |
