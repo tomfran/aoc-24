@@ -1,15 +1,10 @@
 [project]
 name = "aoc-24"
 version = "0.1.0"
-description = "Add your description here"
+description = "Advent of Code Python solutions"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = [
-    "requests>=2.32.3",
-]
-
-[dependency-groups]
-dev = ["pytest>=8.3.3"]
+dependencies = ["requests>=2.32.3"]
 
 [build-system]
 requires = ["setuptools", "wheel", "pip"]

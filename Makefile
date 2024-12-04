@@ -8,6 +8,9 @@ build:
 fmt: 
 	@uvx ruff format
 
+clean: 
+	@uv clean
+
 run-latest:
 	@latest_file=$$(ls -1v $(SOLUTION_DIR)/*.py | tail -n 1); \
 	if [ -n "$$latest_file" ]; then \
