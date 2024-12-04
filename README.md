@@ -25,6 +25,9 @@ make run-latest # run latest file in solutions
 make run-all    # run all solutions
 ```
 ## Solutions
+
+Here is the complete list of solutions:
+
 | **Day** | **Link** | **Total Lines** | **Effective Lines** | **Last Updated** |
 | -: | - | -: | -: | -: |
 | 01 | [Link](./src/aoc/solutions/01.py) |       36 | 23 | Wed, Dec 04, 2024 |
