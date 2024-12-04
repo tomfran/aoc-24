@@ -41,5 +41,6 @@ def solve_second(data):
 
 
 data = get_input(3)
+
 solve_first(data)
 solve_second(data)

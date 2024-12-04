@@ -36,5 +36,6 @@ def solve_second(input):
 
 
 data = [list(map(int, line.split())) for line in get_input(2).splitlines()]
+
 solve_first(data)
 solve_second(data)

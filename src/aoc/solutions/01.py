@@ -31,5 +31,6 @@ def solve_second(first, second):
 
 
 first, second = split(get_input(1))
+
 solve_first(first, second)
 solve_second(first, second)

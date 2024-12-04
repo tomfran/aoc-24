@@ -30,3 +30,4 @@ make run-all    # run all solutions
 | 01 | [Link](./src/aoc/solutions/01.py) |
 | 02 | [Link](./src/aoc/solutions/02.py) |
 | 03 | [Link](./src/aoc/solutions/03.py) |
+| 04 | [Link](./src/aoc/solutions/04.py) |
