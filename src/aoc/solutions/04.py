@@ -5,7 +5,7 @@ FIRST_PATTERN = "XMAS"
 SECOND_PATTERNS = ["MAS", "SAM"]
 
 
-def check_first_internal(i, j, di, dj, level):
+def check_first_internal(data, i, j, di, dj, level):
     if not (0 <= i < len(data) and 0 <= j < len(data[0])):
         return 0
 
@@ -15,12 +15,12 @@ def check_first_internal(i, j, di, dj, level):
     if level == 3:
         return 1
 
-    return check_first_internal(i + di, j + dj, di, dj, level + 1)
+    return check_first_internal(data, i + di, j + dj, di, dj, level + 1)
 
 
-def check_first(i, j):
+def check_first(i, j, data):
     deltas = [(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (-1, -1), (-1, 1), (1, -1)]
-    return sum(map(lambda x: check_first_internal(i, j, x[0], x[1], 0), deltas))
+    return sum(map(lambda x: check_first_internal(data, i, j, x[0], x[1], 0), deltas))
 
 
 def solve_first(data):
