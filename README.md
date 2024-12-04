@@ -25,9 +25,9 @@ make run-latest # run latest file in solutions
 make run-all    # run all solutions
 ```
 ## Solutions
-| **Day** | **Solution** |
-| --- | -------- |
-| 01 | [Link](./src/aoc/solutions/01.py) |
-| 02 | [Link](./src/aoc/solutions/02.py) |
-| 03 | [Link](./src/aoc/solutions/03.py) |
-| 04 | [Link](./src/aoc/solutions/04.py) |
+| **Day** | **Solution** | **Total Lines** | **Effective Lines** | **Last Updated** |
+| --- | -------- | ------------ | -------------------- | ---------------- |
+| 01 | [Link](./src/aoc/solutions/01.py) |       36 | 23 | Wednesday, 04 December 2024 |
+| 02 | [Link](./src/aoc/solutions/02.py) |       41 | 27 | Thursday, 05 December 2024 |
+| 03 | [Link](./src/aoc/solutions/03.py) |       46 | 30 | Wednesday, 04 December 2024 |
+| 04 | [Link](./src/aoc/solutions/04.py) |       64 | 39 | Thursday, 05 December 2024 |
