@@ -30,18 +30,16 @@ run-all:
 readme:
 	@cat $(INTRO_FILE) > $(README_FILE)
 	@echo "## Solutions" >> $(README_FILE)
-	@echo "| **Day** | **Solution** | **Total Lines** | **Effective Lines** | **Last Updated** |" >> $(README_FILE)
-	@echo "| --- | -------- | ------------ | -------------------- | ---------------- |" >> $(README_FILE)
+	@echo "| **Day** | **Link** | **Total Lines** | **Effective Lines** | **Last Updated** |" >> $(README_FILE)
+	@echo "| -: | - | -: | -: | -: |" >> $(README_FILE)
 	@for file in $(SOLUTION_DIR)/*.py; do \
 		day=$$(basename $$file .py); \
 		total_lines=$$(wc -l < $$file); \
 		effective_lines=$$(grep -cve '^\s*$$' -e '^\s*#' $$file); \
-		last_updated=$$(stat -f '%Sm' -t '%A, %d %B %Y' $$file); \
+		last_updated=$$(stat -f '%Sm' -t '%a, %d %b %Y' $$file); \
 		echo "| $$day | [Link](./$$file) | $$total_lines | $$effective_lines | $$last_updated |" >> $(README_FILE); \
 	done
 	@echo "README.md generated successfully"
-
-
 
 update: build fmt readme
 	@git add . && git commit -m "Update"
