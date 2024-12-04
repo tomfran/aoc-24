@@ -1,4 +1,6 @@
-# Advent of Code 2024
+# Advent of Code 2024 :christmas_tree:
+
+Python solutions for [Advent of Code](https://adventofcode.com/) 2024.
 
 Setup and build everything, using [uv](https://github.com/astral-sh/uv):
 
@@ -24,3 +26,8 @@ Alternatevely you can use one of those two rules:
 make run-latest # run latest file in solutions
 make run-all    # run all solutions
 ```
+
+## Solutions
+
+Here is the complete list of solutions:
+
