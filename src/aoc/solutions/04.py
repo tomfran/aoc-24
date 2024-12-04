@@ -2,6 +2,7 @@ from aoc.utilities.fetch import get_input
 
 
 FIRST_PATTERN = "XMAS"
+SECOND_PATTERNS = ["MAS", "SAM"]
 
 
 def check_first_internal(i, j, di, dj, level):
@@ -41,7 +42,7 @@ def check_second(i, j, data):
         for x in range(3):
             word += data[si + di * x][sj + dj * x]
 
-        if word not in ["MAS", "SAM"]:
+        if word not in SECOND_PATTERNS:
             return 0
 
     return 1
