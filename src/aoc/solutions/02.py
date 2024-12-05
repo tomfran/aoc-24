@@ -1,4 +1,5 @@
 from aoc.utilities.fetch import get_input
+from aoc.utilities.decorators import solution
 from collections import Counter
 
 
@@ -18,10 +19,12 @@ def check(line):
     return f(line) or g(line)
 
 
+@solution
 def solve_first(input):
     print(Counter(map(check, input)).get(True, 0))
 
 
+@solution
 def solve_second(input):
     def brute_check(line):
         n = len(line)

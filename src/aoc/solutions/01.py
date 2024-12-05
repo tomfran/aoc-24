@@ -1,4 +1,5 @@
 from aoc.utilities.fetch import get_input
+from aoc.utilities.decorators import solution
 from collections import Counter
 
 
@@ -12,6 +13,7 @@ def split(input):
     return first, second
 
 
+@solution
 def solve_first(first, second):
     ans = 0
     for a, b in zip(sorted(first), sorted(second)):
@@ -20,6 +22,7 @@ def solve_first(first, second):
     print(ans)
 
 
+@solution
 def solve_second(first, second):
     c = Counter(second)
 

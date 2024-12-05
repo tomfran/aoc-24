@@ -1,5 +1,5 @@
 from aoc.utilities.fetch import get_input
-
+from aoc.utilities.decorators import solution
 
 FIRST_PATTERN = "XMAS"
 SECOND_PATTERNS = ["MAS", "SAM"]
@@ -23,6 +23,7 @@ def check_first(i, j, data):
     return sum(map(lambda x: check_first_internal(data, i, j, x[0], x[1], 0), deltas))
 
 
+@solution
 def solve_first(data):
     n, m, ans = len(data), len(data[0]), 0
 
@@ -48,6 +49,7 @@ def check_second(i, j, data):
     return 1
 
 
+@solution
 def solve_second(data):
     n, m, ans = len(data), len(data[0]), 0
 

@@ -15,7 +15,6 @@ run-latest:
 	@latest_file=$$(ls -1v $(SOLUTION_DIR)/*.py | tail -n 1); \
 	if [ -n "$$latest_file" ]; then \
 		day=$$(basename $$latest_file .py); \
-		echo "# Computing solution - day $$day"; \
 		python $$latest_file; \
 	else \
 		echo "No solution files found in $(SOLUTION_DIR)"; \
@@ -25,27 +24,22 @@ run-latest:
 run-all:
 	@for file in $(SOLUTION_DIR)/*.py; do \
 		day=$$(basename $$file .py); \
-		echo "# Computing solution - day $$day"; \
 		python $$file; \
 		echo ""; \
 	done
 
 readme:
 	@cat $(INTRO_FILE) > $(README_FILE)
-	@echo "| **Day** | **Link** | **Total Lines** | **Effective Lines** | **Runtime** | **Last Updated** |" >> $(README_FILE)
-	@echo "| -: | - | -: | -: | -: | -: |" >> $(README_FILE)
+	@echo "| **Day** | **Link** | **Total Lines** | **Effective Lines** | **Last Updated** |" >> $(README_FILE)
+	@echo "| -: | - | -: | -: | -: |" >> $(README_FILE)
 	@for file in $(SOLUTION_DIR)/*.py; do \
 		day=$$(basename $$file .py); \
 		total_lines=$$(wc -l < $$file); \
 		effective_lines=$$(grep -cve '^\s*$$' -e '^\s*#' $$file); \
 		last_updated=$$(stat -f '%Sm' -t '%a, %b %d, %Y' $$file); \
-		python $$file > /dev/null; \
-		run_time=$$( { time python $$file > /dev/null 2>&1; } 2>&1 | grep real | awk '{print $$(NF)}'); \
-		echo "| $$day | [Link](./$$file) | $$total_lines | $$effective_lines | $$run_time | $$last_updated |" >> $(README_FILE); \
+		echo "| $$day | [Link](./$$file) | $$total_lines | $$effective_lines | $$last_updated |" >> $(README_FILE); \
 	done
 	@echo "README.md generated successfully"
-
-
 
 update: build fmt readme
 	@git add . && git commit -m "Update"
@@ -58,7 +52,6 @@ new:
 	echo "Creating $$new_file"; \
 	echo 'from aoc.utilities.fetch import get_input\n\ndata = get_input('$$next_day')' > $$new_file; \
 	echo "New solution file $$new_file created successfully!"
-
 
 # Pretty Run commands, need https://github.com/charmbracelet/glow
 

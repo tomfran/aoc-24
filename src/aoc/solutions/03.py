@@ -1,4 +1,5 @@
 from aoc.utilities.fetch import get_input
+from aoc.utilities.decorators import solution
 import re
 
 
@@ -6,6 +7,7 @@ def check_len(a, b):
     return (1 <= len(a) <= 3) and (1 <= len(b) <= 3)
 
 
+@solution
 def solve_first(data):
     pattern = r"mul\((\d+),\s*(\d+)\)"
 
@@ -19,6 +21,7 @@ def solve_first(data):
     print(ans)
 
 
+@solution
 def solve_second(data):
     pattern = r"(mul|do|don\'t)\((\d+,\d+|)\)"
 
