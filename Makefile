@@ -11,7 +11,7 @@ fmt:
 clean: 
 	@uv clean
 
-run-latest:
+run:
 	@latest_file=$$(ls -1v $(SOLUTION_DIR)/*.py | tail -n 1); \
 	if [ -n "$$latest_file" ]; then \
 		day=$$(basename $$latest_file .py); \
@@ -21,12 +21,20 @@ run-latest:
 		exit 1; \
 	fi
 
-run-all:
+runall:
 	@for file in $(SOLUTION_DIR)/*.py; do \
 		day=$$(basename $$file .py); \
 		python $$file; \
 		echo ""; \
 	done
+
+# Pretty Run commands, need https://github.com/charmbracelet/glow
+
+prun:
+	@make run | glow -w 0
+
+pruna:
+	@make runa | glow -w 0
 
 readme:
 	@cat $(INTRO_FILE) > $(README_FILE)
@@ -53,10 +61,3 @@ new:
 	echo 'from aoc.utilities.fetch import get_input\n\ndata = get_input('$$next_day')' > $$new_file; \
 	echo "New solution file $$new_file created successfully!"
 
-# Pretty Run commands, need https://github.com/charmbracelet/glow
-
-run:
-	@make run-latest | glow -w 0
-
-runa:
-	@make run-all | glow -w 0
