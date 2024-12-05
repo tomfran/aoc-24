@@ -35,7 +35,7 @@ Here is the complete list of solutions:
 
 | **Day** | **Link** | **Total Lines** | **Effective Lines** | **Runtime** | **Last Updated** |
 | -: | - | -: | -: | -: | -: |
-| 01 | [Link](./src/aoc/solutions/01.py) |       36 | 23 | 0m0.069s | Wed, Dec 04, 2024 |
-| 02 | [Link](./src/aoc/solutions/02.py) |       41 | 27 | 0m0.071s | Thu, Dec 05, 2024 |
-| 03 | [Link](./src/aoc/solutions/03.py) |       46 | 30 | 0m0.075s | Wed, Dec 04, 2024 |
-| 04 | [Link](./src/aoc/solutions/04.py) |       64 | 39 | 0m0.115s | Thu, Dec 05, 2024 |
+| 01 | [Link](./src/aoc/solutions/01.py) |       36 | 23 | 0m0.070s | Wed, Dec 04, 2024 |
+| 02 | [Link](./src/aoc/solutions/02.py) |       41 | 27 | 0m0.073s | Thu, Dec 05, 2024 |
+| 03 | [Link](./src/aoc/solutions/03.py) |       46 | 30 | 0m0.067s | Wed, Dec 04, 2024 |
+| 04 | [Link](./src/aoc/solutions/04.py) |       64 | 39 | 0m0.103s | Thu, Dec 05, 2024 |
