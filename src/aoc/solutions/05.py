@@ -56,7 +56,7 @@ def solve_second(edges, updates):
 
 
 data = get_input(5)
-
 edges, updates = parse(data)
+
 solve_first(edges, updates)
 solve_second(edges, updates)

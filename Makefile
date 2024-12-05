@@ -56,7 +56,7 @@ new:
 # Pretty Run commands, need https://github.com/charmbracelet/glow
 
 run:
-	@make run-latest | glow
+	@make run-latest | glow -w 0
 
 runa:
-	@make run-all | glow
+	@make run-all | glow -w 0
