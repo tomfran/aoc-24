@@ -29,12 +29,11 @@ runall:
 	done
 
 # Pretty Run commands, need https://github.com/charmbracelet/glow
-
 prun:
 	@make run | glow -w 0
 
-pruna:
-	@make runa | glow -w 0
+prunall:
+	@make runall | glow -w 0
 
 readme:
 	@cat $(INTRO_FILE) > $(README_FILE)
