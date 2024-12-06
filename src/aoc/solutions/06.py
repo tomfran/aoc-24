@@ -74,6 +74,7 @@ def check_loop(si, sj, matrix):
 
         if (ci, cj, delta_idx) in visited:
             return 1
+
         visited.add((ci, cj, delta_idx))
 
     return 0
@@ -84,6 +85,9 @@ def solve_second(si, sj, matrix, visited):
     ans = 0
 
     for i, j in visited:
+        if (i, j) == (si, sj):
+            continue
+
         matrix[i][j] = OBSTACLE
         ans += check_loop(si, sj, matrix)
         matrix[i][j] = FREE

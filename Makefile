@@ -59,4 +59,3 @@ new:
 	echo "Creating $$new_file"; \
 	echo 'from aoc.utilities.fetch import get_input\n\ndata = get_input('$$next_day')' > $$new_file; \
 	echo "New solution file $$new_file created successfully!"
-
