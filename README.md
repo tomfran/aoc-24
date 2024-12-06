@@ -40,3 +40,4 @@ Here is the complete list of solutions:
 | 03 | [Link](./src/aoc/solutions/03.py) |       49 | 33 | Thu, Dec 05, 2024 |
 | 04 | [Link](./src/aoc/solutions/04.py) |       66 | 42 | Thu, Dec 05, 2024 |
 | 05 | [Link](./src/aoc/solutions/05.py) |       62 | 43 | Thu, Dec 05, 2024 |
+| 06 | [Link](./src/aoc/solutions/06.py) |       97 | 63 | Fri, Dec 06, 2024 |
