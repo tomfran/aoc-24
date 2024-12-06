@@ -25,8 +25,8 @@ python src/aoc/solutions/<DAY>.py
 Alternatevely you can use one of those two rules:
 
 ```sh
-make run     # run latest file in solutions
-make runall  # run all solutions
+make run    # run latest file in solutions
+make runall # run all solutions
 ```
 
 ## Solutions
