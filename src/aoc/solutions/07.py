@@ -20,8 +20,7 @@ def solve(target, parts, operators):
             return target if partial == target else 0
 
         for op in operators:
-            res = rec(i + 1, OPS[op](partial, parts[i]))
-            if res != 0:
+            if res := rec(i + 1, OPS[op](partial, parts[i])):
                 return res
 
         return 0
