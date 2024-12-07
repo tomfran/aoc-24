@@ -30,14 +30,16 @@ runall:
 
 readme:
 	@cat $(INTRO_FILE) > $(README_FILE)
-	@echo "| **Day** | **Link** | **Total Lines** | **Effective Lines** | **Last Updated** |" >> $(README_FILE)
-	@echo "| -: | - | -: | -: | -: |" >> $(README_FILE)
+	@echo "| **Day** | **Link** | **Total Lines** | **Effective Lines**| **Runtime** | **Last Updated** |" >> $(README_FILE)
+	@echo "| -: | - | -: | -: | -: | -: |" >> $(README_FILE)
 	@for file in $(SOLUTION_DIR)/*.py; do \
 		day=$$(basename $$file .py); \
 		total_lines=$$(wc -l < $$file); \
 		effective_lines=$$(grep -cve '^\s*$$' -e '^\s*#' $$file); \
 		last_updated=$$(stat -f '%Sm' -t '%a, %b %d, %Y' $$file); \
-		echo "| $$day | [Link](./$$file) | $$total_lines | $$effective_lines | $$last_updated |" >> $(README_FILE); \
+		echo "Running $$day"; \
+		run_time=$$( { time python $$file > /dev/null 2>&1; } 2>&1 | grep real | awk '{print $$(NF)}'); \
+		echo "| $$day | [Link](./$$file) | $$total_lines | $$effective_lines | $$run_time | $$last_updated |" >> $(README_FILE); \
 	done
 	@echo "README.md generated successfully"
 
