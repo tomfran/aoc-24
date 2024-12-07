@@ -16,6 +16,9 @@ def parse(line):
 
 def solve(target, parts, operators):
     def rec(i, partial):
+        if partial > target:
+            return 0
+
         if i == len(parts):
             return target if partial == target else 0
 
