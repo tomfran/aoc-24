@@ -17,13 +17,14 @@ def parse(line):
 def solve(target, parts, operators):
     def rec(i, partial):
         if i == len(parts):
-            return partial == target
+            return target if partial == target else 0
 
         for op in operators:
-            if rec(i + 1, OPS[op](partial, parts[i])):
-                return True
+            res = rec(i + 1, OPS[op](partial, parts[i]))
+            if res != 0:
+                return res
 
-        return False
+        return 0
 
     return rec(1, parts[0])
 
@@ -33,8 +34,8 @@ def solve_all(parsed):
     ans1, ans2 = 0, 0
 
     for target, parts in parsed:
-        ans1 += target if solve(target, parts, "*+") else 0
-        ans2 += target if solve(target, parts, "*+|") else 0
+        ans1 += solve(target, parts, "*+")
+        ans2 += solve(target, parts, "*+|")
 
     print(f"{ans1}\n{ans2}")
 
