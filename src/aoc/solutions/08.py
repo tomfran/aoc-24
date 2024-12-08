@@ -4,13 +4,8 @@ from collections import defaultdict
 
 
 def coefficient(x1, y1, x2, y2):
-    dx = x1 - x2
-    dy = y1 - y2
-
-    if dx == 0:
-        return float("inf")
-
-    return dy / dx
+    dx, dy = x1 - x2, y1 - y2
+    return float("inf") if dx == 0 else dy / dx
 
 
 def distance(x1, y1, x2, y2):
@@ -30,25 +25,22 @@ def second_check(xr, yr, x1, y1, x2, y2):
     return coefficient(xr, yr, x1, y1) == coefficient(xr, yr, x2, y2)
 
 
-def find_nodes(n, m, point_a, point_b, valid_check):
-    res = set()
-
-    for i in range(n):
-        for j in range(m):
-            if valid_check(i, j, *point_a, *point_b):
-                res.add((i, j))
-
-    return res
-
-
 def compute_antinodes(n, m, coordinates, valid_check):
-    res = set()
+    res = []
+    c = len(coordinates)
 
-    for i in range(len(coordinates)):
-        for j in range(i + 1, len(coordinates)):
-            res |= find_nodes(n, m, coordinates[i], coordinates[j], valid_check)
+    for i in range(c):
+        for j in range(i + 1, c):
+            point_a, point_b = coordinates[i], coordinates[j]
 
-    return res
+            res += [
+                (x, y)
+                for x in range(n)
+                for y in range(m)
+                if valid_check(x, y, *point_a, *point_b)
+            ]
+
+    return set(res)
 
 
 @solution
