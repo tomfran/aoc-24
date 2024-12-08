@@ -1,4 +1,5 @@
 from aoc.utilities.fetch import get_input
+from aoc.utilities.decorators import solution
 from collections import defaultdict
 
 
@@ -50,6 +51,7 @@ def compute_antinodes(n, m, coordinates, valid_check):
     return res
 
 
+@solution
 def solve_all(data):
     d = defaultdict(list)
     n, m = len(data), len(data[0])
