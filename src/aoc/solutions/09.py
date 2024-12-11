@@ -2,16 +2,6 @@ from aoc.utilities.fetch import get_input
 from aoc.utilities.decorators import solution
 
 
-def compute_checksum(disk):
-    ans = 0
-    for i, e in enumerate(disk):
-        if e == -1:
-            break
-        ans += i * e
-
-    return ans
-
-
 @solution
 def solve_first(cells):
     disk = []
@@ -45,45 +35,63 @@ def solve_first(cells):
     print(compute_checksum(disk))
 
 
-# TODO
+@solution
 def solve_second(cells):
-    pass
-    # disk = []
-    # free = False
+    disk = []
 
-    # idx = 0
-    # for e in cells:
-    #     disk.append((e, -1 if free else idx))
-    #     idx = idx if free else idx + 1
-    #     free = not free
+    free = False
+    idx = 0
 
-    # idx -= 1
+    for e in cells:
+        disk.append((-1 if free else idx, e))
+        idx = idx if free else idx + 1
+        free = not free
 
-    # def find_idx(i):
-    #     for j, (_, k) in enumerate(disk):
-    #         if k == i:
-    #             return j
+    disk = disk[::-1]
 
-    # def find_candidate(max_i, need_w):
-    #     for j, (w, k) in enumerate(disk[:max_i]):
-    #         if w >= need_w:
-    #             return j
-    #     return -1
+    i = 0
+    while i < len(disk):
+        id_i, w_i = disk[i]
 
-    # def place(i, j):
+        if id_i == -1:
+            i += 1
+            continue
 
-    # while idx >= 0:
-    #     i = find_idx(idx)
-    #     w, j = disk[i]
-    #     candidate = find_candidate(i, w)
-    #     if candidate != -1:
-    #         place(i, candidate)
+        for j in range(len(disk) - 1, i, -1):
+            id_j, w_j = disk[j]
 
-    #     idx -= 1
+            if id_j != -1 or w_j < w_i:
+                continue
+
+            disk[i] = (-1, w_i)
+
+            swapped = [(id_i, w_i)]
+            if rem := w_j - w_i:
+                swapped.insert(0, (-1, rem))
+
+            disk = disk[:j] + swapped + disk[j + 1 :]
+            break
+
+        i += 1
+
+    cells = []
+    for idx, w in disk[::-1]:
+        cells += [idx] * w
+
+    print(compute_checksum(cells))
+
+
+def compute_checksum(cells):
+    ans = 0
+    for i, e in enumerate(cells):
+        if e == -1:
+            continue
+        ans += i * e
+
+    return ans
 
 
 data = get_input(9)
-data = "12345"
 cells = list(map(int, list(data)))
 
 solve_first(cells)
