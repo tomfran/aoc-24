@@ -17,11 +17,10 @@ def solve(n, left):
     if n == 0:
         return solve(1, left - 1)
 
-    if len(str(n)) % 2 == 0:
-        s = str(n)
-        first = solve(int(s[: len(s) // 2]), left - 1)
-        second = solve(int(s[len(s) // 2 :]), left - 1)
-        return first + second
+    s = str(n)
+    if len(s) % 2 == 0:
+        first, second = int(s[: len(s) // 2]), int(s[len(s) // 2 :])
+        return solve(first, left - 1) + solve(second, left - 1)
 
     return solve(n * 2024, left - 1)
 
