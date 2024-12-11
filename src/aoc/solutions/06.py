@@ -20,14 +20,6 @@ def parse(data):
     return None
 
 
-def inside(i, j, matrix):
-    return 0 <= i < len(matrix) and 0 <= j < len(matrix[0])
-
-
-def obstacle(i, j, matrix):
-    return matrix[i][j] == OBSTACLE
-
-
 @solution
 def solve_first(si, sj, matrix):
     delta_idx = 0
@@ -51,6 +43,29 @@ def solve_first(si, sj, matrix):
 
     print(len(visited))
     return visited
+
+
+@solution
+def solve_second(si, sj, matrix, visited):
+    ans = 0
+
+    for i, j in visited:
+        if (i, j) == (si, sj):
+            continue
+
+        matrix[i][j] = OBSTACLE
+        ans += check_loop(si, sj, matrix)
+        matrix[i][j] = FREE
+
+    print(ans)
+
+
+def inside(i, j, matrix):
+    return 0 <= i < len(matrix) and 0 <= j < len(matrix[0])
+
+
+def obstacle(i, j, matrix):
+    return matrix[i][j] == OBSTACLE
 
 
 def check_loop(si, sj, matrix):
@@ -78,21 +93,6 @@ def check_loop(si, sj, matrix):
         visited.add((ci, cj, delta_idx))
 
     return 0
-
-
-@solution
-def solve_second(si, sj, matrix, visited):
-    ans = 0
-
-    for i, j in visited:
-        if (i, j) == (si, sj):
-            continue
-
-        matrix[i][j] = OBSTACLE
-        ans += check_loop(si, sj, matrix)
-        matrix[i][j] = FREE
-
-    print(ans)
 
 
 (si, sj), matrix = parse(get_input(6))

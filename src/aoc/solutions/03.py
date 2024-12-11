@@ -3,10 +3,6 @@ from aoc.utilities.decorators import solution
 import re
 
 
-def check_len(a, b):
-    return (1 <= len(a) <= 3) and (1 <= len(b) <= 3)
-
-
 @solution
 def solve_first(data):
     pattern = r"mul\((\d+),\s*(\d+)\)"
@@ -41,6 +37,10 @@ def solve_second(data):
         ans += int(a) * int(b)
 
     print(ans)
+
+
+def check_len(a, b):
+    return (1 <= len(a) <= 3) and (1 <= len(b) <= 3)
 
 
 data = get_input(3)

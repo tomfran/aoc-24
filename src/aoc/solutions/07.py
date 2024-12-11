@@ -14,6 +14,17 @@ def parse(line):
     return int(target), list(map(int, res.split()))
 
 
+@solution
+def solve_all(parsed):
+    ans1, ans2 = 0, 0
+
+    for target, parts in parsed:
+        ans1 += solve(target, parts, "*+")
+        ans2 += solve(target, parts, "*+|")
+
+    print(f"{ans1}\n{ans2}")
+
+
 def solve(target, parts, operators):
     def rec(i, partial):
         if partial > target:
@@ -29,17 +40,6 @@ def solve(target, parts, operators):
         return 0
 
     return rec(1, parts[0])
-
-
-@solution
-def solve_all(parsed):
-    ans1, ans2 = 0, 0
-
-    for target, parts in parsed:
-        ans1 += solve(target, parts, "*+")
-        ans2 += solve(target, parts, "*+|")
-
-    print(f"{ans1}\n{ans2}")
 
 
 parsed = list(map(parse, get_input(7).splitlines()))

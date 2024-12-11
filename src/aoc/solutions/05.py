@@ -18,17 +18,6 @@ def parse(data):
     return edges, updates
 
 
-def check_valid(edges, pages):
-    n = len(pages)
-
-    for i in range(n):
-        for j in range(i + 1, n):
-            if pages[i] in edges[pages[j]]:
-                return -1
-
-    return pages[n // 2]
-
-
 @solution
 def solve_first(edges, updates):
     ans = sum(x for pages in updates if (x := check_valid(edges, pages)) != -1)
@@ -53,6 +42,17 @@ def solve_second(edges, updates):
         ans += pages[len(pages) // 2]
 
     print(ans)
+
+
+def check_valid(edges, pages):
+    n = len(pages)
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            if pages[i] in edges[pages[j]]:
+                return -1
+
+    return pages[n // 2]
 
 
 data = get_input(5)
